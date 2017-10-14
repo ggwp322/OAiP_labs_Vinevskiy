@@ -3,26 +3,22 @@
 	Вариант №5
 	Задание :Перевести лот в карат и выразить в унциях.
  */
-#include<stdio.h>
-#include<locale.h>
-#include<conio.h>
 void main(){
 	setlocale(LC_ALL, "Rus");
-	float a, b;
-	double c;
+	float lot, karat;
+	double ynciy;
 	printf("Введите кол-во лот : ");
-	int result = scanf_s("%f", &a);
+	int result = scanf_s("%f", &lot);
 	if (result == 0)
 	{
 		printf("ошибка \n");
 	}
 	else
 	{
-		b = a * 63.98631;
-		printf("\n Это %.3f карат", b);
-		c = a * 0.007054;
-		printf(" и %.3f унций \n", c);
+		karat = lot * LOT_IN_KARAT;
+		printf("\n Это %.3f карат", karat);
+		ynciy = lot * LOT_IN_YNCIY;
+		printf(" и %.3f унций \n", ynciy);
 	}
 	_getch();
 }
-
