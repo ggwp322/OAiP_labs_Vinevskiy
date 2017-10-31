@@ -13,7 +13,7 @@
 #define MIN_LENGTH 0
 void main(){
 	setlocale(LC_ALL, "Rus");
-	float k = 0;
+	float k = 1;
 	float array[MAX_LENGTH];
 	int length;
 	printf("Введите длину массива:");
