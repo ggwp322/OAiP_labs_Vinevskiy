@@ -25,7 +25,7 @@ void main(){
 	int i;
 	for (i = 0; i < length; i++)
 	{
-	printf("Ввведите элемент массива:", i);
+	printf("Введите элемент массива:", i);
 	while (!scanf("%f", &array[i]))
 	{
 	printf("Ошибка ввода!!!\nПовторите попытку ввода: ", i);
