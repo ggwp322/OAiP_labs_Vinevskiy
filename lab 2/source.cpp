@@ -9,6 +9,7 @@
 #include<stdio.h>
 #include<locale.h>
 #include<conio.h>
+
 #define MAX_LENGTH 100
 #define MIN_LENGTH 0
 void main(){
