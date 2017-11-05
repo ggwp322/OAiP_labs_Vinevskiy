@@ -1,0 +1,13 @@
+﻿Сборка начата 05.11.2017 16:01:22.
+     1>Проект "C:\Users\Xilinx\Documents\Visual Studio 2013\Projects\man.cpp\man.cpp\man.cpp.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt man.cpp
+         man.cpp
+       Link:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Xilinx\Documents\Visual Studio 2013\Projects\man.cpp\Debug\man.cpp.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Xilinx\Documents\Visual Studio 2013\Projects\man.cpp\Debug\man.cpp.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Xilinx\Documents\Visual Studio 2013\Projects\man.cpp\Debug\man.cpp.lib" /MACHINE:X86 Debug\man.obj
+         man.cpp.vcxproj -> C:\Users\Xilinx\Documents\Visual Studio 2013\Projects\man.cpp\Debug\man.cpp.exe
+     1>Сборка проекта "C:\Users\Xilinx\Documents\Visual Studio 2013\Projects\man.cpp\man.cpp\man.cpp.vcxproj" завершена (целевые объекты Build).
+
+Сборка успешно завершена.
+
+Затраченное время: 00:00:07.23
