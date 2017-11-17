@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 #include <conio.h>
-#include <locale.>
+#include <locale>
 
 int main()
 {
