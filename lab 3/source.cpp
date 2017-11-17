@@ -23,7 +23,7 @@ int main()
 	for (int i = 0; i < MAX_LENGTH; i++)
 	{
 		if (str[i] == 'ь')
-			str[i] = 'ъ';
+		str[i] = 'ъ';
 	}
 
 	printf("\tпроведена замена мягкого знака на твердый :\n");
