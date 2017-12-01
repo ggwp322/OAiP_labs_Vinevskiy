@@ -44,9 +44,9 @@ void TransferText(FILE *filein, FILE *fileout);
 	char text[MAX_LEN];
 	while (fgets(text, sizeof(text), filein) != NULL)
         for (int i = 0; text[i]; i++) {
-			if (text[i] == 'ь') {
-				text[i] = 'ъ';
-			}
-			fprintf(fileout, "%c", text[i]);
+		if (text[i] == 'ь') {
+		text[i] = 'ъ';
 		}
+		fprintf(fileout, "%c", text[i]);
+	}
     } 
