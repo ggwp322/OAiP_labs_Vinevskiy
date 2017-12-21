@@ -10,6 +10,7 @@
 «Студент»: фамилия, имя, отчество, дата рождения, факультет, кафедра, группа, домашний адрес, успеваемость (плохо, удовлетворительно, хорошо, отлично).
 */
 
+
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h> 
@@ -37,14 +38,14 @@ void mainMenu();
 int checkNumber(int max);
 void choiceFunction(int inquiry);
 void enterStruct(void);
-void search(void);
-void output(void);
+void searchStruct(void);
+void outputMonitor(void);
 int initialization();
 int number = initialization();
 int struc = 0;
-void out(int k);
+void outConcole(int k);
 void outFile(int number);
-void sorting(void);
+void sortingStruct(void);
 void sort(int k, int j);
 void name(void);
 void familia(void);
@@ -108,21 +109,20 @@ void choiceFunction(int inquiry){
 		enterStruct();
 		break;
 	case 2:
-		search();
+		searchStruct();
 		break;
 	case 3:
-		output();
+		outputMonitor();
 		break;
 	case 4:
-		sorting();
+		sortingStruct();
 		break;
 	case 5:
 		exit(0);
 	}
 }
 
-void enterStruct(void)
-{
+void enterStruct(void){
 	int i = 0;
 	printf("Введите кол-во студентов: ");
 	scanf_s("%d", &n);
@@ -162,7 +162,7 @@ void enterStruct(void)
 	}
 }
 
-void search(void){
+void searchStruct(void){
 	int new_number;
 	printf("Поиск:\n1.По имени\n2.По фамилии\n3.По отчеству\n4.По дате рождения\n5.По факультету\n6.По кафедре\n7.По группе\n8.По домашний адрессу\n9.По успеваемость студента (плохо, удовлетворительно, хорошо, отлично)\n");
 	printf("Введите пункт: ");
@@ -191,13 +191,25 @@ void search(void){
 	}
 }
 
+void outConsole(int i){
+	printf("имя: %s\t", &stud[i].name);
+	printf("фамилия: %s\t", &stud[i].familia);
+	printf("отчество: %s\t", &stud[i].otchestvo);
+	printf("дата: %s\t", &stud[i].data);
+	printf("факультет: %s\t", &stud[i].fakyltet);
+	printf("кафедра%s\t", &stud[i].kafedra);
+	printf("группа: %s\t", &stud[i].gruppa);
+	printf("адрес: %s\t", &stud[i].adres);
+	printf("оценка: %s\t", &stud[i].ocenka);
+}
+
 void name(void){
 	char name[MAX_LENGTH];
 	printf("Введите фамилию: ");
 	scanf("%s", &name);
 	for (k = 0; k < n; k++){
 		if ((strcmp(name, stud[k].name)) == 0){
-			out(k);
+			outConsole(k);
 		}
 	}
 }
@@ -208,7 +220,7 @@ void familia(void){
 	scanf("%s", &familia);
 	for (k = 0; k < n; k++){
 		if ((strcmp(name, stud[k].familia)) == 0){
-			out(k);
+			outConcole(k);
 		}
 	}
 }
@@ -219,7 +231,7 @@ void otchestvo(void){
 	scanf("%s", &otchestvo);
 	for (k = 0; k < n; k++){
 		if ((strcmp(otchestvo, stud[k].otchestvo)) == 0){
-			out(k);
+			outConsole(k);
 		}
 	}
 }
@@ -230,7 +242,7 @@ void data(void){
 	scanf("%s", &data);
 	for (k = 0; k < n; k++){
 		if ((strcmp(data, stud[k].data)) == 0){
-			out(k);
+			outConsole(k);
 		}
 	}
 }
@@ -240,9 +252,8 @@ void fakyltet(void){
 	printf("Введите факультет: ");
 	scanf("%s", &fakyltet);
 	for (k = 0; k < n; k++){
-		if ((strcmp(fakyltet, stud[k].fakyltet)) == 0)
-		{
-			out(k);
+		if ((strcmp(fakyltet, stud[k].fakyltet)) == 0){
+			outConsole(k);
 		}
 	}
 }
@@ -253,7 +264,7 @@ void kafedra(void){
 	scanf("%s", &kafedra);
 	for (k = 0; k < n; k++){
 		if ((strcmp(kafedra, stud[k].kafedra)) == 0){
-			out(k);
+			outConsole(k);
 		}
 	}
 }
@@ -264,7 +275,7 @@ void gruppa(void){
 	scanf("%s", &gruppa);
 	for (k = 0; k < n; k++){
 		if ((strcmp(gruppa, stud[k].gruppa)) == 0){
-			out(k);
+			outConsole(k);
 		}
 	}
 }
@@ -275,7 +286,7 @@ void adres(void){
 	scanf("%s", &adres);
 	for (k = 0; k < n; k++){
 		if ((strcmp(adres, stud[k].adres)) == 0){
-			out(k);
+			outConsole(k);
 		}
 	}
 }
@@ -285,16 +296,18 @@ void ocenka(void){
 	printf("Введите успеваемость студента (плохо, удовлетворительно, хорошо, отлично");
 	scanf("%s", &ocenka);
 	for (k = 0; k < n; k++){
-		if ((strcmp(ocenka, stud[k].ocenka)) == 0){
-			out(k);
+		if ((strcmp(ocenka, stud[k].ocenka)) == 0)
+		{
+			outConsole(k);
 		}
 	}
 }
 
-void output(void){
+void outputMonitir(void){
 	printf("---вывод на экран---\n");
 	if (number == 0){
-		printf("нет структур\n");}
+		printf("нет структур\n");
+	}
 	else{
 		print(number);
 	}
@@ -302,7 +315,7 @@ void output(void){
 
 void print(int number){
 	for (int k = 0; k < number; k++){
-		out(k);
+		outConsole(k);
 	}
 }
 
@@ -320,7 +333,7 @@ int initialization(){
 			printf("---файл отсутствует---");
 			system("pause");
 			exit(0);
-		}
+}
 		fclose(File);
 		fclose(File1);
 
@@ -330,12 +343,11 @@ int initialization(){
 void outFile(int number){
 	FILE *File = fopen("StructFile.txt", "w");
 	for (int i = 0; i < number; i++){
-		fprintf(File, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", &stud[i].name, &stud[i].familia, &stud[i].otchestvo, &stud[i].data, &stud[i].fakyltet, &stud[i].kafedra, &stud[i].gruppa, &stud[i].adres, &stud[i].ocenka);
-	}
+		fprintf(File, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", &stud[i].name, &stud[i].familia, &stud[i].otchestvo, &stud[i].data, &stud[i].fakyltet, &stud[i].kafedra, &stud[i].gruppa, &stud[i].adres, &stud[i].ocenka);}
 	fclose(File);
 }
 
-void sorting(void){
+void sortingStruct(void){
 	int new_number;
 	printf("Введите по каким данным вы хотите упорядочить студентов:\n1.По фамилии\n2.По Имени\n3.По отчеству\n4.По дате рождения\n5.По факультету\n6.По кафедре\n7.По группе\n8.По домашний адрессу\n9.По успеваемость студента (плохо, удовлетворительно, хорошо, отлично)\n");
 	printf("Введите пункт: ");
@@ -444,14 +456,3 @@ void sort(int k, int j){
 	}
 }
 
-void out(int i){
-	printf("имя: %s\t", &stud[i].name);
-	printf("фамилия: %s\t", &stud[i].familia);
-	printf("отчество: %s\t", &stud[i].otchestvo);
-	printf("дата: %s\t", &stud[i].data);
-	printf("факультет: %s\t", &stud[i].fakyltet);
-	printf("кафедра%s\t", &stud[i].kafedra);
-	printf("группа: %s\t", &stud[i].gruppa);
-	printf("адрес: %s\t", &stud[i].adres);
-	printf("оценка: %s\t", &stud[i].ocenka);
-}
