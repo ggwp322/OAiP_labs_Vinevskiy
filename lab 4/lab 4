@@ -12,8 +12,8 @@
 #include <locale>
 #include <conio.h>
 
-void Error(FILE *filein);
-void TransferText(FILE *filein, FILE *fileout);
+void isFileExist(FILE *filein);
+void transferText(FILE *filein, FILE *fileout);
 
 void main(){
 	system("chcp 1251");
@@ -24,22 +24,22 @@ void main(){
 	filein = fopen("input.txt", "r");
 	fileout = fopen ("output.txt", "w");
 
-	Error(filein);
-	TransferText(filein, fileout);
+	isFileExist(filein);
+	transferText(filein, fileout);
 
 	fclose(filein);
 	fclose(fileout);
 	_getch();
 }
 
-void Error(FILE *filein) {
+void isFileExist(FILE *filein) {
 	if (filein == NULL) {
 		 printf("No data '%s'", filein);
 		 _getch();
 	}
 }
 
-void TransferText(FILE *filein, FILE *fileout) {
+void transferText(FILE *filein, FILE *fileout) {
 	char text[MAX_LEN];
 	
 	while (fgets(text, sizeof(text), filein) != NULL)
