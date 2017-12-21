@@ -36,6 +36,7 @@ void isFileExist(FILE *filein) {
 	if (filein == NULL) {
 		printf("No data '%s'", filein);
 		_getch();
+		exit(0);
 	}
 }
 
