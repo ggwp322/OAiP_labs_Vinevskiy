@@ -33,7 +33,6 @@ struct student{
 	char    ocenka[MAX_LENGTH];
 }stud[STRUCTURE_LENGTH];
 
-int n,k,j;
 void mainMenu();
 int checkNumber(int max);
 void choiceFunction(int inquiry);
@@ -43,6 +42,7 @@ void outputMonitor(void);
 int initialization();
 int number = initialization();
 int struc = 0;
+int n,k,j;
 void outConcole(int k);
 void outFile(int number);
 void sortingStruct(void);
