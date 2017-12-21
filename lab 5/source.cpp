@@ -66,13 +66,11 @@ void sortingAdres();
 void sortingOcenka();
 void print(int number);
 
-int main()
-{
+int main(){
 	system("chcp 1251");
 	system("cls");
 	int inquiry = 0;
-	do
-	{
+	do{
 		printf("\nЧто вы хотите сделать?\n");
 		mainMenu();
 		inquiry = checkNumber(5);
@@ -104,10 +102,8 @@ int checkNumber(int max){
 	return number;
 }
 
-void choiceFunction(int inquiry)
-{
-	switch (inquiry)
-	{
+void choiceFunction(int inquiry){
+	switch (inquiry){
 	case 1:
 		enterStruct();
 		break;
@@ -199,10 +195,8 @@ void name(void){
 	char name[MAX_LENGTH];
 	printf("Введите фамилию: ");
 	scanf("%s", &name);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(name, stud[k].name)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(name, stud[k].name)) == 0){
 			out(k);
 		}
 	}
@@ -212,10 +206,8 @@ void familia(void){
 	char name[MAX_LENGTH];
 	printf("Введите имя");
 	scanf("%s", &familia);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(name, stud[k].familia)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(name, stud[k].familia)) == 0){
 			out(k);
 		}
 	}
@@ -225,10 +217,8 @@ void otchestvo(void){
 	char otchestvo[MAX_LENGTH];
 	printf("Введите отчество: ");
 	scanf("%s", &otchestvo);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(otchestvo, stud[k].otchestvo)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(otchestvo, stud[k].otchestvo)) == 0){
 			out(k);
 		}
 	}
@@ -238,10 +228,8 @@ void data(void){
 	char data[MAX_LENGTH];
 	printf("Введите дату рождения: ");
 	scanf("%s", &data);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(data, stud[k].data)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(data, stud[k].data)) == 0){
 			out(k);
 		}
 	}
@@ -251,8 +239,7 @@ void fakyltet(void){
 	char fakyltet[MAX_LENGTH];
 	printf("Введите факультет: ");
 	scanf("%s", &fakyltet);
-	for (k = 0; k < n; k++)
-	{
+	for (k = 0; k < n; k++){
 		if ((strcmp(fakyltet, stud[k].fakyltet)) == 0)
 		{
 			out(k);
@@ -264,10 +251,8 @@ void kafedra(void){
 	char kafedra[MAX_LENGTH];
 	printf("Введите кафедру");
 	scanf("%s", &kafedra);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(kafedra, stud[k].kafedra)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(kafedra, stud[k].kafedra)) == 0){
 			out(k);
 		}
 	}
@@ -277,10 +262,8 @@ void gruppa(void){
 	char gruppa[MAX_LENGTH];
 	printf("Введите группу");
 	scanf("%s", &gruppa);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(gruppa, stud[k].gruppa)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(gruppa, stud[k].gruppa)) == 0){
 			out(k);
 		}
 	}
@@ -290,10 +273,8 @@ void adres(void){
 	char adres[MAX_LENGTH];
 	printf("Введите домашний адресс");
 	scanf("%s", &adres);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(adres, stud[k].adres)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(adres, stud[k].adres)) == 0){
 			out(k);
 		}
 	}
@@ -303,10 +284,8 @@ void ocenka(void){
 	char ocenka[MAX_LENGTH];
 	printf("Введите успеваемость студента (плохо, удовлетворительно, хорошо, отлично");
 	scanf("%s", &ocenka);
-	for (k = 0; k < n; k++)
-	{
-		if ((strcmp(ocenka, stud[k].ocenka)) == 0)
-		{
+	for (k = 0; k < n; k++){
+		if ((strcmp(ocenka, stud[k].ocenka)) == 0){
 			out(k);
 		}
 	}
@@ -315,8 +294,7 @@ void ocenka(void){
 void output(void){
 	printf("---вывод на экран---\n");
 	if (number == 0){
-		printf("нет структур\n");
-	}
+		printf("нет структур\n");}
 	else{
 		print(number);
 	}
@@ -351,8 +329,7 @@ int initialization(){
 
 void outFile(int number){
 	FILE *File = fopen("StructFile.txt", "w");
-	for (int i = 0; i < number; i++)
-	{
+	for (int i = 0; i < number; i++){
 		fprintf(File, "%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n", &stud[i].name, &stud[i].familia, &stud[i].otchestvo, &stud[i].data, &stud[i].fakyltet, &stud[i].kafedra, &stud[i].gruppa, &stud[i].adres, &stud[i].ocenka);
 	}
 	fclose(File);
@@ -387,100 +364,73 @@ void sorting(void){
 	}
 }
 
-void sortingName()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].name, stud[k + 1].name) != 0)
-		{
+void sortingName(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].name, stud[k + 1].name) != 0){
 			sort(k,j);
 		}
 	}
 }
 
-void sortingFamilia()
-{
-	for (k = 0; k < (k - 1); k++)
-	{
-		if (strcmp(stud[k].familia, stud[k + 1].familia) != 0)
-		{
+void sortingFamilia(){
+	for (k = 0; k < (k - 1); k++){
+		if (strcmp(stud[k].familia, stud[k + 1].familia) != 0){
 			sort(k,j);
 		}
 	}
 }
 
-void sortingOtchestvo()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].otchestvo, stud[k + 1].otchestvo) != 0)
-		{
+void sortingOtchestvo(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].otchestvo, stud[k + 1].otchestvo) != 0){
 			sort(k, j);
 		}
 	}
 }
 
-void sortingData()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].data, stud[k + 1].data) != 0)
-		{
+void sortingData(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].data, stud[k + 1].data) != 0){
 			sort(k, j);
 		}
 	}
 }
 
-void sortingFakyltet()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].fakyltet, stud[k + 1].fakyltet) != 0)
-		{
+void sortingFakyltet(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].fakyltet, stud[k + 1].fakyltet) != 0){
 			sort(k, j);
 		}
 	}
 }
 
-void sortingKafedra()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].kafedra, stud[k + 1].kafedra) != 0)
-		{
+void sortingKafedra(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].kafedra, stud[k + 1].kafedra) != 0){
 			sort(k, j);
 		}
 	}
 }
 
-void sortingGruppa()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].gruppa, stud[k + 1].gruppa) != 0)
-		{
+void sortingGruppa(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].gruppa, stud[k + 1].gruppa) != 0){
 			sort(k, j);
 		}
 	}
 }
 
-void sortingAdres()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].adres, stud[k + 1].adres) != 0)
-		{
+void sortingAdres(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].adres, stud[k + 1].adres) != 0){
 			sort(k, j);
 		}
 	}
 }
 
-void sortingOcenka()
-{
-	for (k = 0; k < (n - 1); k++)
-	{
-		if (strcmp(stud[k].ocenka, stud[k + 1].ocenka) != 0)
-		{
+void sortingOcenka(){
+	for (k = 0; k < (n - 1); k++){
+		if (strcmp(stud[k].ocenka, stud[k + 1].ocenka) != 0){
 			sort(k, j);
 		}
 	}
