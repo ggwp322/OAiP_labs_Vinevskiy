@@ -38,7 +38,7 @@ int checkNumber(int max);
 void choiceFunction(int inquiry);
 void enterStruct(void);
 void searchStruct(void);
-void outputMonitor(void);
+void outPutMonitor(void);
 int initialization();
 int number = initialization();
 int struc = 0;
@@ -102,7 +102,7 @@ void choiceFunction(int inquiry){
 		searchStruct();
 		break;
 	case 3:
-		outputMonitor();
+		outPutMonitor();
 		break;
 	case 4:
 		sortingStruct();
@@ -226,7 +226,7 @@ void outConsole(int i){
 	printf("оценка: %s\t", &stud[i].assessment);
 }
 
-void outputMonitir(void){
+void outPutMonitir(void){
 	printf("---вывод на экран---\n");
 	if (number == 0){
 		printf("нет структур\n");
