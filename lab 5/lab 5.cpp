@@ -52,9 +52,9 @@ int search = 0;
 void print(int number);
 void searchByField(struct student, int new_number, int struc, int field);
 void searchStruct(void);
-int compareByField(struct student, char field, int i, char *Search);
+int compareStruct(struct student, char field, int i, char *Search);
 void sortingStruct(void);
-int compareByField1(struct student, int field, int i);
+int sortByField(struct student, int field, int i);
 void  sortByField(struct student, int new_number, int field);
 
 int main(){
@@ -185,7 +185,7 @@ void searchByField(struct *sterud, int new_number, int struc, int field){
 		char Search[MAX_LENGTH];
 		scanf("%s", &Search);
 		for (int i = 0; i < new_number; i++){
-			if ((compareByField(stud, field, i, Search)) == 0){
+			if ((compareStruct(stud, field, i, Search)) == 0){
 				struc++;
 				printf(" Введите номер структуры-> %d\n", i + 1);
 				outConsole(i);
@@ -199,7 +199,7 @@ void searchByField(struct *sterud, int new_number, int struc, int field){
 		system("cls");
 	}
 
-int compareByField(struct student, char field, int i, char *Search){
+int compareStruct(struct student, char field, int i, char *Search){
 	int code;
 	switch (field) {
 	case 1:code = strcmp(Search, stud[i].name); 
@@ -318,7 +318,7 @@ void  sortByField(struct student, int new_number, int field){
 	system("cls");
 }
 
-int compareByField1(struct student, int field, int i){
+int compareStruct(struct student, int field, int i){
 	int code;
 	switch (field) {
 	case 1:code = strcmp(stud[i + 1].name, stud[i].name);
