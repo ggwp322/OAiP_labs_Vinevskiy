@@ -1,0 +1,4 @@
+﻿Сборка начата 23.12.2017 22:08:05.
+     1>Проект "C:\Users\Xilinx\documents\visual studio 2013\Projects\sour\sour\sour.vcxproj" в узле 2 (целевые объекты Build).
+     1>ClCompile:
+         C:\Program Files\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt sour.cpp
