@@ -36,13 +36,11 @@ void isFileExist(FILE *filein) {
 	if (filein == NULL) {
 		printf("No data '%s'", filein);
 		_getch();
-		exit(0);
 	}
 }
 
 void transferText(FILE *filein, FILE *fileout) {
 	char text[MAX_LEN];
-
 	while (fgets(text, sizeof(text), filein) != NULL)
 		for (int i = 0; text[i]; i++) {
 			if (text[i] == 'ь') {
